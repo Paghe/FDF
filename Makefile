@@ -8,6 +8,7 @@ SRC = main.c \
 		src/draw_lines.c \
 		src/utils.c \
 		src/projection.c \
+		src/rotation.c \
 
 OBJ = 	$(SRC:.c=.o)
 LIBFT = ./libft/libft.a

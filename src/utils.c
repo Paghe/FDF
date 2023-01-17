@@ -6,7 +6,7 @@
 /*   By: apaghera <apaghera@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 15:48:41 by apaghera          #+#    #+#             */
-/*   Updated: 2023/01/14 17:03:32 by apaghera         ###   ########.fr       */
+/*   Updated: 2023/01/16 18:41:48 by apaghera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,20 @@ int	get_steep_sy(int *y, int *y1, t_point *point)
 	else
 		*(point->sy) = -1;
 	return (*(point->sy));
+}
+
+void	zoom(t_point *point, int *begin, int *end)
+{
+	begin[0] *= point -> zoom;
+	begin[1] *= point -> zoom;
+	end[0] *= point -> zoom;
+	end[1] *= point -> zoom;
+}
+
+void	shift(t_point *point, int *begin, int *end)
+{
+	begin[0] += point -> shift_x;
+	end[0] += point -> shift_x;
+	begin[1] += point -> shift_y;
+	end[1] += point -> shift_y;
 }
